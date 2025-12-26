@@ -13,7 +13,7 @@ pub(crate) const unsafe fn slice<T>(slice: &[T], beg: usize, end: usize) -> &[T]
 }
 
 #[inline]
-pub(crate) const unsafe fn slice_mut<T>(slice: &mut [T], beg: usize, end: usize) -> &mut [T] {
+pub(crate) unsafe fn slice_mut<T>(slice: &mut [T], beg: usize, end: usize) -> &mut [T] {
     let ptr = slice.as_mut_ptr().add(beg);
     &mut *std::ptr::slice_from_raw_parts_mut(ptr, end - beg)
 }

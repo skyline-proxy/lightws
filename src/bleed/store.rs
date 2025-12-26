@@ -74,7 +74,7 @@ impl<const N: usize> Store<N> {
     }
 
     #[inline]
-    pub const fn write(&mut self) -> &mut [u8] {
+    pub fn write(&mut self) -> &mut [u8] {
         unsafe { slice_mut(&mut self.buf, self.wr as usize, N) }
     }
 
